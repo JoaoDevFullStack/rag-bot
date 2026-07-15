@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+chroma_db/
+documentos/
+.env
+.git/
+.gitignore
+rag_chroma.py
+chunking.py
+embeddings.py
+helloworld.py
+listar_modelos.py

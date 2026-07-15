@@ -1,0 +1,15 @@
+services:
+  rag-api:
+    build: .
+    container_name: rag-bot-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persiste os PDFs enviados e o banco vetorial fora do container —
+      # se você recriar o container (docker compose up --build), os dados
+      # continuam lá em ./documentos e ./chroma_db na sua máquina.
+      - ./documentos:/app/documentos
+      - ./chroma_db:/app/chroma_db
+    env_file:
+      - .env
+    restart: unless-stopped
